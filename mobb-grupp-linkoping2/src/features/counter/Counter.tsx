@@ -18,6 +18,7 @@ export const Counter = () => {
   const dispatch = useAppDispatch()
   const count = useAppSelector(selectCount)
   const savedCount = useAppSelector(state => state.counter.savedCount)
+  // --------------------------------------------------------------------------------------------------------------------------------
   const status = useAppSelector(selectStatus)
   const [incrementAmount, setIncrementAmount] = useState("2")
 
@@ -30,35 +31,32 @@ export const Counter = () => {
           className={styles.button}
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
+        >-</button>
+
         <span aria-label="Count" className={styles.value}>
           {count}
         </span>
+
         <button
           className={styles.button}
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
+        >+</button>
+        
         <button
           className={styles.button}
           aria-label="Double value"
           onClick={() => dispatch(double())}
-        >
-          Double
-        </button>
+        >Double</button>
+
         <button
           className={styles.button}
           aria-label="Save Count"
           onClick={() => dispatch(saveCount())}
-        >
-          Save Count
-        </button>
+        >Save Count</button>
         <p>Saved Count: {savedCount}</p>
       </div>
+      {/* ---------------------------------------------------------------------------------------------------------- */}
       <div className={styles.row}>
         <input
           className={styles.textbox}
