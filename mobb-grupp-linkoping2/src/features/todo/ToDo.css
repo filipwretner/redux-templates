@@ -1,0 +1,25 @@
+body  {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 97%);
+    padding: 1rem;
+}
+
+.todo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    background-color: hsl(0, 0%, 10%);
+}
+
+input {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+}
