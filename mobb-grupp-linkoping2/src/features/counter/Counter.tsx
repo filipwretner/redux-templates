@@ -5,6 +5,8 @@ import styles from "./Counter.module.css"
 import {
   decrement,
   increment,
+  double,
+  saveCount,
   incrementAsync,
   incrementByAmount,
   incrementIfOdd,
@@ -15,6 +17,7 @@ import {
 export const Counter = () => {
   const dispatch = useAppDispatch()
   const count = useAppSelector(selectCount)
+  const savedCount = useAppSelector(state => state.counter.savedCount)
   const status = useAppSelector(selectStatus)
   const [incrementAmount, setIncrementAmount] = useState("2")
 
@@ -40,6 +43,21 @@ export const Counter = () => {
         >
           +
         </button>
+        <button
+          className={styles.button}
+          aria-label="Double value"
+          onClick={() => dispatch(double())}
+        >
+          Double
+        </button>
+        <button
+          className={styles.button}
+          aria-label="Save Count"
+          onClick={() => dispatch(saveCount())}
+        >
+          Save Count
+        </button>
+        <p>Saved Count: {savedCount}</p>
       </div>
       <div className={styles.row}>
         <input

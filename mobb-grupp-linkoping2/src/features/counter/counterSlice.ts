@@ -5,11 +5,13 @@ import { fetchCount } from "./counterAPI"
 
 export interface CounterSliceState {
   value: number
+  savedCount: number
   status: "idle" | "loading" | "failed"
 }
 
 const initialState: CounterSliceState = {
   value: 0,
+  savedCount: 0,
   status: "idle",
 }
 
@@ -29,6 +31,12 @@ export const counterSlice = createAppSlice({
     }),
     decrement: create.reducer(state => {
       state.value -= 1
+    }),
+    double: create.reducer(state => {
+      state.value *= 2;
+    }),
+    saveCount: create.reducer(state => {
+      state.savedCount = state.value;
     }),
     // Use the `PayloadAction` type to declare the contents of `action.payload`
     incrementByAmount: create.reducer(
@@ -70,7 +78,7 @@ export const counterSlice = createAppSlice({
 })
 
 // Action creators are generated for each case reducer function.
-export const { decrement, increment, incrementByAmount, incrementAsync } =
+export const { decrement, increment, double, saveCount, incrementByAmount, incrementAsync } =
   counterSlice.actions
 
 // Selectors returned by `slice.selectors` take the root state as their first argument.
