@@ -6,6 +6,7 @@ body  {
 
 .todo-area {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -23,3 +24,14 @@ input {
     border-radius: 2rem;
     padding: 1rem 2rem;
 }
+
+ul {
+    margin: 10px;
+    padding: 20px;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+

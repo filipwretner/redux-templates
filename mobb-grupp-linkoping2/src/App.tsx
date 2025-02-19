@@ -2,7 +2,7 @@ import "./App.css"
 import { Counter } from "./features/counter/Counter"
 import { Quotes } from "./features/quotes/Quotes"
 import logo from "./logo.svg"
-// import ToDo from '../features/todo/ToDo';
+import ToDo from "./features/todo/ToDo";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        {/* <ToDo /> */}
+        <ToDo />
         <Quotes />
         <span>
           <span>Learn </span>
